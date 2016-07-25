@@ -58,20 +58,22 @@ function file2array($filename){
 			$i=0;
 			foreach($keys as $str){
 				if(mb_strlen(trim($str))>0){
-					$ex = explode(';',$str);
-					$id = $i;
-					//$data[$id]['line1'] = $ex[0];
-					$data[$id]['line1'] = $i+1;
-					$data[$id]['line2'] = $ex[1];
-					$data[$id]['line3'] = $ex[2];
-					$data[$id]['line4'] = $ex[3];
-					$data[$id]['line5'] = $ex[4];
-					$data[$id]['line6'] = $ex[5];
-					$data[$id]['line7'] = $ex[6];
-					$data[$id]['line8'] = $ex[7];
-					$data[$id]['line9'] = $ex[8];
-					$data[$id]['line10'] = $ex[9];
-					$i++;
+					if(preg_match('/^\d+\;/',$str)){
+						$ex = explode(';',$str);
+						$id = $i;
+						//$data[$id]['line1'] = $ex[0];
+						$data[$id]['line1'] = $i+1;
+						$data[$id]['line2'] = $ex[1];
+						$data[$id]['line3'] = $ex[2];
+						$data[$id]['line4'] = $ex[3];
+						$data[$id]['line5'] = $ex[4];
+						$data[$id]['line6'] = $ex[5];
+						$data[$id]['line7'] = $ex[6];
+						$data[$id]['line8'] = $ex[7];
+						$data[$id]['line9'] = $ex[8];
+						$data[$id]['line10'] = $ex[9];
+						$i++;
+					}
 				}	
 			}
 			return $data;
