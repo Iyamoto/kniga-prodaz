@@ -2,9 +2,6 @@
 //kniga prodaz
 echo "start\n";
 
-#delete not ^\d lines
-#delete empty lines
-
 $data = file2array('in.csv');
 //var_dump($data);
 
@@ -17,7 +14,7 @@ $sum8=0;
 $sum9=0;
 
 foreach($data as $element){
-	var_dump($element);
+	//var_dump($element);
 	$inn = trim($element["line5"]);
 	if ($inn=='47120521290') $inn='471205212902';
 	if ($inn=='274191036') $inn='0274191036';
@@ -47,6 +44,8 @@ $base = str_replace('$data',$text,$base);
 $base = str_replace('$sum8',$sum8,$base);
 $base = str_replace('$sum9',$sum9,$base);
 file_put_contents('NO_NDS.9_7801_7801_780161151018_20160725_4D085B51-7556-4827-BD18-0466799C6603.xml',$base);
+
+echo "done\n";
 
 function file2array($filename){
 	if(file_exists($filename)){
