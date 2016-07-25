@@ -4,10 +4,8 @@ echo "start\n";
 
 #delete not ^\d lines
 #delete empty lines
-#"47120521290" - "471205212902"
-#          <СведИП ИННФЛ="462902636478"></СведИП>
 
-$data = file2array('2.csv');
+$data = file2array('in.csv');
 //var_dump($data);
 
 $base = file_get_contents('tpl.xml');
