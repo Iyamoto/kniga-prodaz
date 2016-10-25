@@ -19,6 +19,8 @@ foreach($data as $element){
 	if ($inn=='47120521290') $inn='471205212902';
 	if ($inn=='274191036') $inn='0274191036';
 	if ($inn=='326016895') $inn='0326016895';
+	if ($inn=='276126850') $inn='0276126850';
+	if ($inn=='274907739') $inn='0274907739';
 	$innlen = strlen($inn);
 	if ($innlen==12) $tmptpl = $tplip;
 	else $tmptpl = $tpl;
